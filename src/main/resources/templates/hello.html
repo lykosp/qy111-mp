@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎页面</title>
+</head>
+<body>
+    <h1>这是我第一个thymeleaf页面</h1>
+    <h1 th:text="${username}"></h1>
+    <h1 th:text="${session.password}"></h1>
+    <table border="1px" th:if="${not#lists.isEmpty(usersList)}">
+        <tr>
+            <td>用户ID</td>
+            <td>姓名</td>
+            <td>邮箱</td>
+            <td>密码</td>
+            <td>学号</td>
+        </tr>
+        <tr th:each="user:${usersList}">
+            <td th:text="${user.uid}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.schoolNum}"></td>
+        </tr>
+    </table>
+    <button onclick="deleteUser()">点击</button>
+</body>
+<script th:inline="javaScript">
+    function deleteUser() {
+        var  useId=[[${usersid}]];
+        alert(useId);
+    }
+</script>
+</html>

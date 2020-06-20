@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.qy111mp.dao.UsersDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.aaa.qy111mp.entity.Users">
+        <id column="uid" property="uid" />
+        <result column="school_num" property="schoolNum" />
+        <result column="name" property="name" />
+        <result column="grade" property="grade" />
+        <result column="school" property="school" />
+        <result column="major" property="major" />
+        <result column="email" property="email" />
+        <result column="password" property="password" />
+        <result column="role" property="role" />
+        <result column="sex" property="sex" />
+        <result column="qq" property="qq" />
+        <result column="phone" property="phone" />
+        <result column="adress" property="adress" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, school_num AS schoolNum, name, grade, school, major, email, password, role, sex, qq, phone, adress
+    </sql>
+
+</mapper>
